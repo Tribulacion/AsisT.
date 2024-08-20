@@ -1,0 +1,15 @@
+main.py: Archivo principal para ejecutar la aplicación.
+    assets/: Contiene recursos estáticos como imágenes e iconos.
+        images/: Carpeta para almacenar imágenes.
+        icons/: Carpeta para almacenar iconos.
+config/: Contiene configuraciones de la aplicación, como la configuración de la base de datos.
+    config.py: Archivo de configuración.
+database/: Contiene todo lo relacionado con la base de datos.
+    connection.py: Maneja la conexión a la base de datos.
+    models.py: Define los modelos de la base de datos.
+services/: Contiene la lógica de negocio.
+    user_service.py: Maneja la lógica relacionada con los usuarios.
+tests/: Contiene los tests para la aplicación.
+    test_user_service.py: Tests para user_service.py.
+utils/: Contiene utilidades y funciones auxiliares.
+    helpers.py: Funciones auxiliares.
