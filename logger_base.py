@@ -1,15 +1,19 @@
 import logging as log
 import os
 
-# Obtener la ruta absoluta del archivo de log en la raíz del proyecto
-log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'capa_datos.log')
+# Ruta absoluta del archivo de log
+log_file_path = r'D:\ProyectosPersonales\Cursos\AsisT_\capa_datos.log'
 
+# Verificar si el archivo de log existe, si no, crearlo
+if not os.path.exists(log_file_path):
+    with open(log_file_path, 'w') as file:
+        pass
 
 log.basicConfig(level=log.DEBUG,
-                format="%(asctime)s - %(levelname)s - [%(filename)s:%(lineno)s] - %(message)s",
+                format="%(asctime)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s",
                 datefmt="%I:%M:%S %p",
                 handlers=[
-                    log.FileHandler("log_file_path"),
+                    log.FileHandler(log_file_path),
                     log.StreamHandler()
                 ])
 
