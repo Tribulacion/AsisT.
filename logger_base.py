@@ -7,6 +7,7 @@ log_file_path = r'D:\ProyectosPersonales\Cursos\AsisT_\capa_datos.log'
 # Verificar si el archivo de log existe, si no, crearlo
 if not os.path.exists(log_file_path):
     with open(log_file_path, 'w') as file:
+        log.debug('Se ha creado el archivo de log')
         pass
 
 log.basicConfig(level=log.DEBUG,

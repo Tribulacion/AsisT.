@@ -26,11 +26,11 @@ class Conexion:
             try:
                 # Crear el pool de conexiones
                 cls._pool = pool.SimpleConnectionPool(cls._MIN_CON, cls._MAX_CON,
-                                                        host=cls._HOST,
-                                                        user=cls._USERNAME,
-                                                        password=cls._PASSWORD,
-                                                        port=cls._DB_PORT,
-                                                        database=cls._DATABASE)
+                                                      host=cls._HOST,
+                                                      user=cls._USERNAME,
+                                                      password=cls._PASSWORD,
+                                                      port=cls._DB_PORT,
+                                                      database=cls._DATABASE)
                 # Log
                 log.debug(f'Creación del pool exitosa: {cls._pool}')
                 return cls._pool
