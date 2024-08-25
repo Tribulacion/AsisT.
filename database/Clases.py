@@ -6,10 +6,10 @@ class Roles:
     """
     DAO (Data Access Object) de la tabla roles
     """
-    _SELECCIONAR = 'SELECT * FROM "Roles" ORDER BY id_rol'
-    _INSERTAR = 'INSERT INTO "Roles"(nombre) VALUES(%s) RETURNING id_rol'
-    _ACTUALIZAR = 'UPDATE "Roles" SET nombre=%s WHERE id_rol=%s'
-    _ELIMINAR = 'DELETE FROM "Roles" WHERE id_rol=%s'
+    _SELECCIONAR = 'SELECT * FROM roles ORDER BY id_rol'
+    _INSERTAR = 'INSERT INTO roles(nombre) VALUES(%s) RETURNING id_rol'
+    _ACTUALIZAR = 'UPDATE roles SET nombre=%s WHERE id_rol=%s'
+    _ELIMINAR = 'DELETE FROM roles WHERE id_rol=%s'
 
     # id de roles
     _id_rol = 0
