@@ -33,6 +33,7 @@ class CursorDelPool:
             log.debug("Commit de la transacción")
         self._cursor.close()
         Conexion.liberar_conexion(self._conexion)
+        log.debug("Se liberan los recursos de la conexión")
 
 
 if __name__ == '__main__':

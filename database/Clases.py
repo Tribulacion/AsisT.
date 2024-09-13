@@ -2,7 +2,7 @@ from database.cursor_del_pool import CursorDelPool
 from logger_base import log
 
 
-class Roles:
+class RolesDAO:
     """
     DAO (Data Access Object) de la tabla roles
     """
@@ -21,7 +21,7 @@ class Roles:
         return cls._id_rol
 
     def __init__(self, nombre=None):
-        self._id = Roles.aumentar_id_rol()
+        self._id = RolesDAO.aumentar_id_rol()
         self._nombre = nombre
 
     def __str__(self):
@@ -84,8 +84,75 @@ class Roles:
             return cursor.rowcount
 
 
+class PersonaDAO:
+    """
+    Clase DAO (Data Access Object) para administrar las personas en la base de datos
+    """
+
+    _SELECCIONAR = 'SELECT * FROM personas ORDER BY id_persona'
+    _INSERTAR = 'INSERT INTO personas(nombre, apellido, email) VALUES(%s, %s, %s)'
+    _ACTUALIZAR = 'UPDATE personas SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s'
+    _ELIMINAR = 'DELETE FROM personas WHERE id_persona=%s'
+
+    @classmethod
+    def seleccionar(cls):
+        """
+        Método que selecciona los registros de la tabla personas
+        :return:
+            Lista de tuplas con los registros de la tabla
+        """
+        with CursorDelPool() as cursor:
+            log.debug(cursor.mogrify(cls._SELECCIONAR))
+            cursor.execute(cls._SELECCIONAR)
+            return cursor.fetchall()
+
+    @classmethod
+    def insertar(cls, persona):
+        """
+        Método que inserta un registro en la tabla personas
+        :param persona:
+        :return:
+            Cantidad de registros insertados
+        """
+        with CursorDelPool() as cursor:
+            log.debug(cursor.mogrify(cls._INSERTAR, persona))
+            cursor.execute(cls._INSERTAR, persona)
+            return cursor.rowcount
+
+    @classmethod
+    def actualizar(cls, persona):
+        """
+        Método que actualiza un registro en la tabla personas
+        :param persona:
+        :return:
+            Cantidad de registros actualizados
+        """
+        with CursorDelPool() as cursor:
+            log.debug(cursor.mogrify(cls._ACTUALIZAR, persona))
+            cursor.execute(cls._ACTUALIZAR, persona)
+            return cursor.rowcount
+
+    @classmethod
+    def eliminar(cls, persona):
+        """
+        Método que elimina un registro en la tabla personas
+        :param persona:
+        :return:
+            Cantidad de registros eliminados
+        """
+        with CursorDelPool() as cursor:
+            log.debug(cursor.mogrify(cls._ELIMINAR, persona))
+            cursor.execute(cls._ELIMINAR, persona)
+            return cursor.rowcount
+
+
 if __name__ == '__main__':
     # log.debug(Roles.insertar('Visitante'))
     # log.debug(Roles.seleccionar())
 
-    log.debug(Roles.seleccionar())
+    # log.debug(RolesDAO.seleccionar())
+    # print(f'Roles: {RolesDAO.seleccionar()}')
+    # RolesDAO.actualizar('Trabajador', 3)
+    # print(f'Roles: {RolesDAO.seleccionar()}')
+    # RolesDAO.insertar('Visitante')
+    print(f'Roles: {RolesDAO.seleccionar()}')
