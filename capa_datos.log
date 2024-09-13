@@ -1,0 +1,24 @@
+04:03:35 PM - DEBUG - [cursor_del_pool.py:14] - Inicio del método with __enter__
+04:03:35 PM - DEBUG - [Conection.py:35] - Creación del pool exitosa: <psycopg2.pool.SimpleConnectionPool object at 0x0000020FCE361220>
+04:03:35 PM - DEBUG - [Conection.py:55] - Conexión obtenida del pool: <connection object at 0x0000020FCFF06350; dsn: 'user=postgres password=xxx dbname=punto_venta host=127.0.0.1 port=5432', closed: 0>
+04:03:35 PM - DEBUG - [Clases.py:39] - b'SELECT * FROM roles ORDER BY id_rol'
+04:03:35 PM - DEBUG - [cursor_del_pool.py:27] - Se ejecuta método __exit__
+04:03:35 PM - DEBUG - [cursor_del_pool.py:33] - Commit de la transacción
+04:03:35 PM - DEBUG - [Conection.py:65] - Regresamos la conexión al pool: <connection object at 0x0000020FCFF06350; dsn: 'user=postgres password=xxx dbname=punto_venta host=127.0.0.1 port=5432', closed: 0>
+04:03:35 PM - DEBUG - [cursor_del_pool.py:36] - Se liberan los recursos de la conexión
+03:37:03 PM - DEBUG - [cursor_del_pool.py:14] - Inicio del método with __enter__
+03:37:03 PM - DEBUG - [Conection.py:35] - Creación del pool exitosa: <psycopg2.pool.SimpleConnectionPool object at 0x0000024798881220>
+03:37:03 PM - DEBUG - [Conection.py:55] - Conexión obtenida del pool: <connection object at 0x000002479A3F6350; dsn: 'user=postgres password=xxx dbname=punto_venta host=127.0.0.1 port=5432', closed: 0>
+03:37:03 PM - DEBUG - [Clases.py:39] - b'SELECT * FROM roles ORDER BY id_rol'
+03:37:03 PM - DEBUG - [cursor_del_pool.py:27] - Se ejecuta método __exit__
+03:37:03 PM - DEBUG - [cursor_del_pool.py:33] - Commit de la transacción
+03:37:03 PM - DEBUG - [Conection.py:65] - Regresamos la conexión al pool: <connection object at 0x000002479A3F6350; dsn: 'user=postgres password=xxx dbname=punto_venta host=127.0.0.1 port=5432', closed: 0>
+03:37:03 PM - DEBUG - [cursor_del_pool.py:36] - Se liberan los recursos de la conexión
+03:37:47 PM - DEBUG - [cursor_del_pool.py:14] - Inicio del método with __enter__
+03:38:00 PM - DEBUG - [Conection.py:35] - Creación del pool exitosa: <psycopg2.pool.SimpleConnectionPool object at 0x000001D6C47C18B0>
+04:36:06 PM - DEBUG - [Conection.py:55] - Conexión obtenida del pool: <connection object at 0x000001D6C56EE680; dsn: 'user=postgres password=xxx dbname=punto_venta host=127.0.0.1 port=5432', closed: 0>
+04:36:24 PM - DEBUG - [Clases.py:39] - b'SELECT * FROM roles ORDER BY id_rol'
+04:36:28 PM - DEBUG - [cursor_del_pool.py:27] - Se ejecuta método __exit__
+04:36:28 PM - DEBUG - [cursor_del_pool.py:33] - Commit de la transacción
+04:36:29 PM - DEBUG - [Conection.py:65] - Regresamos la conexión al pool: <connection object at 0x000001D6C56EE680; dsn: 'user=postgres password=xxx dbname=punto_venta host=127.0.0.1 port=5432', closed: 0>
+04:36:29 PM - DEBUG - [cursor_del_pool.py:36] - Se liberan los recursos de la conexión
